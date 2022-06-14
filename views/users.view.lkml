@@ -103,7 +103,19 @@ view: users {
   dimension: traffic_source {
     type: string
     sql: ${TABLE}.traffic_source ;;
+    html:  {% if value == 'Display'%}
+         <p><img src="http://findicons.com/files/icons/2806/plex_for_android/96/people.png" height=20 width=20>{{ rendered_value }}</p>
+         {% elsif value == 'Email' %}
+        <p><img src="http://findicons.com/files/icons/2806/plex_for_android/96/gmail.png" height=20 width=20>{{ rendered_value }}</p>
+         {% elsif value == 'Facebook' %}
+        <p><img src="http://findicons.com/files/icons/2806/plex_for_android/96/facebook.png" height=20 width=20>{{ rendered_value }}</p>
+         {% elsif value == 'Organic' %}
+        <p><img src="http://findicons.com/files/icons/2806/plex_for_android/96/office.png" height=20 width=20>{{ rendered_value }}</p>
+      {% else %}
+        <p><img src="http://findicons.com/files/icons/2806/plex_for_android/96/springpad.png" height=20 width=20>{{ rendered_value }}</p>
+      {% endif %} ;;
   }
+
 
   dimension: zip {
     type: zipcode
