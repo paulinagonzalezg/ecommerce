@@ -78,10 +78,10 @@ view: users {
   dimension: gender {
     type: string
     sql: ${TABLE}.gender ;;
-    html: html: {% if value == 'f'%}
-    <p><img src="https://img.icons8.com/ios-filled/50/undefined/standing-woman.png" height=50 width=50>{{ rendered_value }}</p>
+    html:{% if value == 'Female'%}
+    <p><img src="https://img.icons8.com/ios-filled/50/undefined/standing-woman.png" height=40 width=40>{{ rendered_value }}</p>
     {% else %}
-    <p><img src="https://img.icons8.com/ios-glyphs/30/undefined/men-age-group-4.png" height=50 width=50>{{ rendered_value }}</p>
+    <p><img src="https://img.icons8.com/ios-glyphs/30/undefined/men-age-group-4.png" height=40 width=40>{{ rendered_value }}</p>
     {% endif %} ;;
   }
 
