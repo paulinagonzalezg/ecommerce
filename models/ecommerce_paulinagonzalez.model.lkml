@@ -69,6 +69,11 @@ explore: order_items {
     sql_on: ${order_items.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
+  join: filtered_dates {
+    type:  left_outer
+    sql_on: ${order_items.id} = ${filtered_dates.order_items_id};;
+    relationship: many_to_one
+  }
 
   join: inventory_items {
     type: left_outer

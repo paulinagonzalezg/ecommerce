@@ -1,4 +1,4 @@
-view: sql_runner_query {
+view: filtered_dates {
   derived_table: {
     sql: SELECT
           order_items.id  AS order_items_id,
@@ -20,6 +20,7 @@ view: sql_runner_query {
   }
 
   dimension: order_items_id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.order_items_id ;;
   }
