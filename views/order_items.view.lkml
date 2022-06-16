@@ -19,12 +19,14 @@ view: order_items {
   # This dimension will be called "Created At" in Explore.
 
   dimension: created_at {
-    type: string
+    type: date
+    label: "Creation Date"
     sql: ${TABLE}.created_at ;;
   }
 
   dimension: delivered_at {
-    type: string
+    type: date
+    label: "Delivery Date"
     sql: ${TABLE}.delivered_at ;;
   }
 
@@ -41,7 +43,8 @@ view: order_items {
   }
 
   dimension: returned_at {
-    type: string
+    type: date
+    label: "Return Date"
     sql: ${TABLE}.returned_at ;;
   }
 
@@ -70,7 +73,8 @@ view: order_items {
   }
 
   dimension: shipped_at {
-    type: string
+    type: date
+    label: "Shipping Date"
     sql: ${TABLE}.shipped_at ;;
   }
 
@@ -91,8 +95,6 @@ view: order_items {
     {% endif %}
 ;;
 }
-
-
   dimension: user_id {
     type: number
     # hidden: yes
