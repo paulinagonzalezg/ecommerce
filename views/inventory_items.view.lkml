@@ -30,6 +30,8 @@ view: inventory_items {
   measure: total_cost {
     type: sum
     sql: ${cost} ;;
+    #Added
+    value_format: "0.##"
   }
 
   measure: average_cost {

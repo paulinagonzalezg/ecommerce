@@ -45,6 +45,7 @@ view: distribution_centers {
   dimension: name {
     type: string
     sql: ${TABLE}.name ;;
+    label: "Distribution Center"
   }
 
   measure: count {
