@@ -28,21 +28,23 @@ view: filtered_dates {
   dimension: order_items_created_at {
     type: date
     datatype: date
+    label: "Creation Date"
     sql: ${TABLE}.order_items_created_at ;;
   }
 
   dimension: order_items_delivered_at {
     type: date
     datatype: date
+    label: "Delivery Date"
     sql: ${TABLE}.order_items_delivered_at ;;
   }
 
   dimension: order_items_shipped_at {
     type: date
     datatype: date
+    label: "Shipped Date"
     sql: ${TABLE}.order_items_shipped_at ;;
   }
-
   set: detail {
     fields: [order_items_id, order_items_created_at, order_items_delivered_at, order_items_shipped_at]
   }

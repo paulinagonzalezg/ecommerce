@@ -82,4 +82,26 @@ view: products {
     type: count
     drill_fields: [id, name, distribution_centers.name, distribution_centers.id, inventory_items.count]
   }
+  parameter: select_department{
+    type: unquoted
+    allowed_value: {
+      label: "Women"
+      value: "Women"
+    }
+    allowed_value: {
+      label: "Men"
+      value: "Men"
+    }
+  }
+  dimension: dynamic_department {
+    label_from_parameter: select_department
+    type: string
+    sql:
+    {% if select_department._parameter_value == 'Women' %}
+    ${products.department}
+    {% else %}
+    ${products.department}
+    {% endif %} ;;
+  }
+
 }

@@ -41,13 +41,11 @@ view: distribution_centers {
     type: number
     sql: ${TABLE}.longitude ;;
   }
-
   dimension: name {
     type: string
     sql: ${TABLE}.name ;;
     label: "Distribution Center"
   }
-
   measure: count {
     type: count
     drill_fields: [id, name, products.count]
